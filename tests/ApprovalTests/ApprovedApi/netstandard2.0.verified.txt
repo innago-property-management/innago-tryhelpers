@@ -1,0 +1,133 @@
+﻿[assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/innago-property-management/innago-tryhelpers")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("DynamicProxyGenAssembly2")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("UnitTests")]
+namespace Innago.Shared.TryHelpers
+{
+    public static class BooleanFunctionalExtensions
+    {
+        public static void IfFalse(this bool value, System.Action onFalse) { }
+        public static Innago.Shared.TryHelpers.Unit IfFalse(this bool value, System.Func<Innago.Shared.TryHelpers.Unit> onFalse) { }
+        public static System.Threading.Tasks.Task IfFalseAsync(this bool value, System.Func<System.Threading.Tasks.Task> onFalse) { }
+        public static System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit> IfFalseAsync(this bool value, System.Func<System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit>> onFalse) { }
+        public static void IfTrue(this bool value, System.Action onTrue) { }
+        public static Innago.Shared.TryHelpers.Unit IfTrue(this bool value, System.Func<Innago.Shared.TryHelpers.Unit> onTrue) { }
+        public static System.Threading.Tasks.Task IfTrueAsync(this bool value, System.Func<System.Threading.Tasks.Task> onTrue) { }
+        public static System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit> IfTrueAsync(this bool value, System.Func<System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit>> onTrue) { }
+        public static T? Map<T>(this bool value, System.Func<T?> onTrue, System.Func<T?> onFalse) { }
+        public static void Match(this bool value, System.Action onTrue, System.Action onFalse) { }
+        public static Innago.Shared.TryHelpers.Unit Match(this bool value, System.Func<Innago.Shared.TryHelpers.Unit> onTrue, System.Func<Innago.Shared.TryHelpers.Unit> onFalse) { }
+        public static System.Threading.Tasks.Task MatchAsync(this bool value, System.Func<System.Threading.Tasks.Task> onTrue, System.Func<System.Threading.Tasks.Task> onFalse) { }
+        public static System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit> MatchAsync(this bool value, System.Func<System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit>> onTrue, System.Func<System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit>> onFalse) { }
+    }
+    public static class EitherExtensions
+    {
+        public static System.Func<TInput?, Innago.Shared.TryHelpers.Either<TLeft?, TRight>> ToEitherLeft<TInput, TLeft, TRight>(this System.Func<TInput?, TLeft?> func) { }
+        public static System.Func<TInput?, Innago.Shared.TryHelpers.Either<TLeft, TRight?>> ToEitherRight<TInput, TLeft, TRight>(this System.Func<TInput?, TRight?> func) { }
+    }
+    public struct Either<TLeft, TRight> : System.IEquatable<Innago.Shared.TryHelpers.Either<TLeft, TRight>>
+    {
+        public static readonly Innago.Shared.TryHelpers.Either<TLeft, TRight> Default;
+        public Either() { }
+        public Either(System.Func<TLeft?> leftValueFn) { }
+        public Either(System.Func<TRight?> rightValueFn) { }
+        public Either(TLeft? leftValue) { }
+        public Either(TRight rightValue) { }
+        public bool IsLeft { get; }
+        public bool IsNeither { get; }
+        public bool IsRight { get; }
+        public bool Equals(Innago.Shared.TryHelpers.Either<TLeft, TRight> other) { }
+        public override int GetHashCode() { }
+        public void IfLeft(System.Action<TLeft?> onLeft) { }
+        public Innago.Shared.TryHelpers.Unit IfLeft(System.Func<TLeft?, Innago.Shared.TryHelpers.Unit> onLeft) { }
+        public System.Threading.Tasks.Task IfLeftAsync(System.Func<TLeft?, System.Threading.Tasks.Task> onLeft) { }
+        public System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit> IfLeftAsync(System.Func<TLeft?, System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit>> onLeft) { }
+        public System.Threading.Tasks.Task<T?> IfLeftAsync<T>(System.Func<TLeft?, System.Threading.Tasks.Task<T?>> onLeft) { }
+        public void IfRight(System.Action<TRight?> onRight) { }
+        public Innago.Shared.TryHelpers.Unit IfRight(System.Func<TRight?, Innago.Shared.TryHelpers.Unit> onRight) { }
+        public T? IfRight<T>(System.Func<TRight?, T> onRight) { }
+        public System.Threading.Tasks.Task IfRightAsync(System.Func<TRight?, System.Threading.Tasks.Task> onRight) { }
+        public System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit> IfRightAsync(System.Func<TRight?, System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit>> onRight) { }
+        public System.Threading.Tasks.Task<T?> IfRightAsync<T>(System.Func<TRight?, System.Threading.Tasks.Task<T?>> onRight) { }
+        public T? Map<T>(System.Func<TLeft?, T?> onLeft, System.Func<TRight?, T?> onRight) { }
+        public void Match(System.Action<TLeft?> onLeft, System.Action<TRight?> onRight) { }
+        public Innago.Shared.TryHelpers.Unit Match(System.Func<TLeft?, Innago.Shared.TryHelpers.Unit> onLeft, System.Func<TRight?, Innago.Shared.TryHelpers.Unit> onRight) { }
+        public static TLeft? op_Implicit(Innago.Shared.TryHelpers.Either<TLeft, TRight> either) { }
+        public static TRight? op_Implicit(Innago.Shared.TryHelpers.Either<TLeft, TRight> either) { }
+        public static Innago.Shared.TryHelpers.Either<TLeft, TRight> op_Implicit(System.Func<TLeft> value) { }
+        public static Innago.Shared.TryHelpers.Either<TLeft, TRight> op_Implicit(System.Func<TRight?> value) { }
+        public static Innago.Shared.TryHelpers.Either<TLeft, TRight> op_Implicit(TLeft value) { }
+        public static Innago.Shared.TryHelpers.Either<TLeft, TRight> op_Implicit(TRight value) { }
+    }
+    public struct Result : System.IEquatable<Innago.Shared.TryHelpers.Result>
+    {
+        public Result() { }
+        public Result(System.Exception error) { }
+        public bool HasFailed { get; }
+        public bool HasSucceeded { get; }
+        public static Innago.Shared.TryHelpers.Result Success { get; }
+        public void IfFailed(System.Action<System.Exception?> onError) { }
+        public Innago.Shared.TryHelpers.Unit IfFailed(System.Func<System.Exception?, Innago.Shared.TryHelpers.Unit> onError) { }
+        public void IfSucceeded(System.Action onSuccess) { }
+        public Innago.Shared.TryHelpers.Unit IfSucceeded(System.Func<Innago.Shared.TryHelpers.Unit> onSuccess) { }
+        public void Match(System.Action onSuccess, System.Action<System.Exception?> onError) { }
+        public Innago.Shared.TryHelpers.Unit Match(System.Func<Innago.Shared.TryHelpers.Unit> onSuccess, System.Func<System.Exception?, Innago.Shared.TryHelpers.Unit> onError) { }
+        public static Innago.Shared.TryHelpers.Result ExceptionAsResult(System.Exception exception) { }
+        public static System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Result> ExceptionAsTaskResult(System.Exception exception) { }
+        public static System.Exception? op_Implicit(Innago.Shared.TryHelpers.Result result) { }
+        public static Innago.Shared.TryHelpers.Result op_Implicit(System.Exception exception) { }
+    }
+    public struct Result<T> : System.IEquatable<Innago.Shared.TryHelpers.Result<T>>
+    {
+        public Result() { }
+        public Result(System.Exception error) { }
+        public Result(T? value) { }
+        public bool HasFailed { get; }
+        public bool HasSucceeded { get; }
+        public void IfFailed(System.Action<System.Exception?> onError) { }
+        public Innago.Shared.TryHelpers.Unit IfFailed(System.Func<System.Exception?, Innago.Shared.TryHelpers.Unit> onError) { }
+        public T? IfFailed(System.Func<System.Exception?, T> onError) { }
+        public System.Threading.Tasks.Task IfFailedAsync(System.Func<System.Exception?, System.Threading.Tasks.Task> onError) { }
+        public System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit> IfFailedAsync(System.Func<System.Exception?, System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit>> onError) { }
+        public System.Threading.Tasks.Task<T?> IfFailedAsync(System.Func<System.Exception?, System.Threading.Tasks.Task<T?>> onError) { }
+        public void IfSucceeded(System.Action<T?> onSuccess) { }
+        public Innago.Shared.TryHelpers.Unit IfSucceeded(System.Func<T?, Innago.Shared.TryHelpers.Unit> onSuccess) { }
+        public System.Threading.Tasks.Task IfSucceededAsync(System.Func<T?, System.Threading.Tasks.Task> onSuccess) { }
+        public System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit> IfSucceededAsync(System.Func<T?, System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit>> onSuccess) { }
+        public TResult? Map<TResult>(System.Func<T?, TResult?> onSuccess, System.Func<System.Exception?, TResult?> onError) { }
+        public void Match(System.Action<T?> onSuccess, System.Action<System.Exception?> onError) { }
+        public Innago.Shared.TryHelpers.Unit Match(System.Func<T?, Innago.Shared.TryHelpers.Unit> onSuccess, System.Func<System.Exception?, Innago.Shared.TryHelpers.Unit> onFailure) { }
+        public static Innago.Shared.TryHelpers.Result<T> ExceptionAsResult(System.Exception exception) { }
+        public static System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Result<T>> ExceptionAsTaskResult(System.Exception exception) { }
+        public static T? op_Implicit(Innago.Shared.TryHelpers.Result<T> result) { }
+        public static System.Exception? op_Implicit(Innago.Shared.TryHelpers.Result<T> result) { }
+        public static Innago.Shared.TryHelpers.Result<T> op_Implicit(System.Exception exception) { }
+        public static Innago.Shared.TryHelpers.Result<T> op_Implicit(T value) { }
+    }
+    public static class TryHelpers
+    {
+        public static Innago.Shared.TryHelpers.Result Try(System.Action action) { }
+        public static Innago.Shared.TryHelpers.Result<T?> Try<T>(System.Func<T?> func) { }
+        public static System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Result> TryAsync(System.Func<System.Threading.Tasks.Task> func) { }
+        public static System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Result<T?>> TryAsync<T>(System.Func<System.Threading.Tasks.Task<T?>> func) { }
+    }
+    public struct Unit : System.IComparable<Innago.Shared.TryHelpers.Unit>, System.IEquatable<Innago.Shared.TryHelpers.Unit>
+    {
+        public static readonly Innago.Shared.TryHelpers.Unit Default;
+        public int CompareTo(Innago.Shared.TryHelpers.Unit other) { }
+        public bool Equals(Innago.Shared.TryHelpers.Unit other) { }
+        public override int GetHashCode() { }
+        public override string ToString() { }
+        public static bool operator <(Innago.Shared.TryHelpers.Unit l, Innago.Shared.TryHelpers.Unit r) { }
+        public static bool operator <=(Innago.Shared.TryHelpers.Unit l, Innago.Shared.TryHelpers.Unit r) { }
+        public static bool operator >(Innago.Shared.TryHelpers.Unit l, Innago.Shared.TryHelpers.Unit r) { }
+        public static bool operator >=(Innago.Shared.TryHelpers.Unit l, Innago.Shared.TryHelpers.Unit r) { }
+    }
+    public static class UnitExtensions
+    {
+        public static System.Func<Innago.Shared.TryHelpers.Unit> AsFunc(this System.Action action) { }
+        public static System.Func<T?, Innago.Shared.TryHelpers.Unit> AsFunc<T>(this System.Action<T?> action) { }
+        public static System.Func<System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit>> AsFuncTaskUnit(this System.Func<System.Threading.Tasks.Task> func) { }
+        public static System.Func<T?, System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit>> AsFuncTaskUnit<T>(this System.Func<T?, System.Threading.Tasks.Task> func) { }
+        public static System.Threading.Tasks.Task<Innago.Shared.TryHelpers.Unit> AsUnitTask(this System.Threading.Tasks.Task task) { }
+    }
+}
