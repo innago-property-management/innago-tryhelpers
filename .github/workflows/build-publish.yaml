@@ -14,6 +14,8 @@ jobs:
       githubToken: ${{ secrets.SEMVER_TOKEN }}
       cosignKey: ${{ secrets.COSIGN_KEY }}
       cosignPassword: ${{ secrets.COSIGN_PASSWORD }}
+    with: 
+      minimumCoverage: 0
     permissions:
       attestations: write
       packages: write
