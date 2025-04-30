@@ -247,3 +247,4 @@ FodyWeavers.xsd
 /.idea/.idea.TryHelpers/.idea/indexLayout.xml
 /.idea/.idea.TryHelpers/.idea/material_theme_project_new.xml
 /.idea/.idea.TryHelpers/.idea/encodings.xml
+/tests/results/
