@@ -11,7 +11,7 @@ jobs:
   build:
     uses: innago-property-management/Oui-DELIVER/.github/workflows/build-publish.yml@main
     secrets:
-      githubToken: ${{ secrets.SEMVER_TOKEN }}
+      githubToken: ${{ secrets.SEMVER_TOKEN_NO_EXPIRATION }}
       cosignKey: ${{ secrets.COSIGN_KEY }}
       cosignPassword: ${{ secrets.COSIGN_PASSWORD }}
     with: 
