@@ -13,3 +13,4 @@ jobs:
     secrets:
       token: ${{ secrets.SEMVER_TOKEN_NO_EXPIRATION }}
       auto_pr_private_key: ${{ secrets.AUTO_PR_APP_PRIVATE_KEY }}
+
